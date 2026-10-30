@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Julia Aquino Lima - Student ID: 81294 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hero Block with Image</title>
+
+    <meta name="description"
+          content="A hero block with a background image and a tinted overlay.">
+
+    <link rel="preload" href="./assets/img/business.jpg" as="image">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* HERO BLOCK */
+
+        header {
+            min-height: 80vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.40),
+                    rgba(0, 0, 0, 0.40)
+                ),
+                url("./assets/img/business.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        /* MAIN TITLE */
+
+        header h1 {
+            color: white;
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: bold;
+            letter-spacing: -2px;
+            margin: 0 0 24px;
+
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        /* SUBTITLE */
+
+        header h2 {
+            color: white;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: normal;
+            margin: 0;
+
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        /* ANIMATION FROM TOP */
+
+        @keyframes slide-in-top {
+            0% {
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ANIMATION FROM LEFT */
+
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-1000px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in-top {
+            animation: slide-in-top 1s ease-out both;
+        }
+
+        .slide-in-left {
+            animation: slide-in-left 1.5s ease-out both;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                min-height: 60vh;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO BLOCK -->
+
+    <header>
+
+        <h1 class="slide-in-top">
+            Albert Camus
+        </h1>
+
+        <h2 class="slide-in-left">
+            CREATIVE WEB DEVELOPER
+        </h2>
+
+    </header>
+
+    <!-- END HERO BLOCK -->
+
+</body>
+
+</html>
